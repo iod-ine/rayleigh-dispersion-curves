@@ -8,9 +8,12 @@
 #include "Eigen/Dense"
 
 #include "layer.h"
+#include "medium.h"
 
 using Eigen::Matrix;
 
 Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f);
+
+double RayleighDispersionFunction(const Medium &m, double c, double f);
 
 #endif //RDCS_RAYLEIGH_H
