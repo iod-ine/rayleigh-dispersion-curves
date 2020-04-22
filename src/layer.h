@@ -5,6 +5,7 @@
 #ifndef RDCS_LAYER_H
 #define RDCS_LAYER_H
 
+#include "spdlog/spdlog.h"
 
 class Layer {
 public:

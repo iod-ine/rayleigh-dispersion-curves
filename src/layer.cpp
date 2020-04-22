@@ -12,6 +12,8 @@ Layer::Layer(double vs, double h) {
     Vs = vs;
     Rho = 0.31 * pow(Vp, 0.25);  // calculate Rho from Gardner's relation
     H = h;
+
+    spdlog::info("Created a Layer: α≈{:.1f} β={} ρ≈{:.3f} h={}", Vp, Vs, Rho, H);
 }
 
 Layer::Layer(double vp, double vs, double rho, double h) {
@@ -19,4 +21,6 @@ Layer::Layer(double vp, double vs, double rho, double h) {
     Vs = vs;
     Rho = rho;
     H = h;
+
+    spdlog::info("Created a Layer: α={:.1f} β={} ρ={:.1f} h={}", Vp, Vs, Rho, H);
 }

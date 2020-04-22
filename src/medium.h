@@ -6,6 +6,9 @@
 #define RDCS_MEDIUM_H
 
 #include <vector>
+
+#include "spdlog/spdlog.h"
+
 #include "layer.h"
 
 using std::vector;
