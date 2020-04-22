@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(src libs/include)
 
-add_executable(RDCs main.cpp src/medium.cpp src/medium.h src/layer.cpp src/layer.h)
+add_executable(RDCs main.cpp src/medium.cpp src/medium.h src/layer.cpp src/layer.h src/rayleigh.h src/rayleigh_layer_matrix.cpp)
