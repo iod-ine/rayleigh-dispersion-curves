@@ -5,7 +5,7 @@
 #include "rayleigh.h"
 
 array<double, 500> RayleighNextHigherMode(const Medium &m, const array<double, 500> &prev) {
-    array<double, 500> out;
+    array<double, 500> out = {0};
 
     spdlog::info("Calculating next higher mode...");
 

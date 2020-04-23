@@ -6,6 +6,7 @@
 #define RDCS_RAYLEIGH_H
 
 #include <array>
+#include <cmath>
 
 #include "Eigen/Dense"
 
@@ -15,6 +16,7 @@
 
 using Eigen::Matrix;
 using std::array;
+using std::isnan;
 
 Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f);
 
