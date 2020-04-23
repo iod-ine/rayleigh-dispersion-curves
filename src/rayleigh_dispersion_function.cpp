@@ -7,6 +7,19 @@
 double RayleighDispersionFunction(const Medium &m, double c, double f) {
     Matrix<double, 6, 6> A;
 
+    // check if c is equal to velocity in any of the layers,
+    // because then sin(0) / 0 ruins all the fun.
+    // so lets not deal with it and simple change c a tiniest bit
+    // this feels a little bit hack-ish, yes
+
+    for (auto Layer : m.Layers) {
+        if (c == Layer.Vp) {
+            c -= 0.1;
+        } else if (c == Layer.Vs) {
+            c += 0.1;
+        }
+    }
+
     A = Matrix<double, 6, 6>::Identity();
     for (auto Layer : m.Layers) {
         A = A * RayleighLayerMatrix(Layer, c, f);

@@ -46,9 +46,6 @@ Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f) {
         // when Vs <= c < Vp, r is imaginary, but s is real.
         // here we repeat the substitutions from the last branch, but only for r.
 
-        // also, a special case is c == Vs, because s becomes 0 and values
-        // where it is in the denominator need to be manually set to 0
-
         // in this branch formulas from Novotny are modified to avoid dealing with complex numbers.
         // actual formulas are in the last branch of this if statement.
 
@@ -64,11 +61,10 @@ Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f) {
 
         q1 = cos(Q);  // since Q is real, these are what they should be
         q2 = s * sin(Q);
-        q3 = c == l.Vs ? 0 : sin(Q) / s;  // here we must check for c == Vs to avoid division by 0
+        q3 = sin(Q) / s;
 
     } else {
         // when Vp <= c, everything is finally real.
-        // however, still need to check for c == Vp to avoid division by zero (now with r)
 
         r = sqrt(c * c / l.Vp / l.Vp - 1);
         s = sqrt(c * c / l.Vs / l.Vs - 1);
@@ -78,7 +74,7 @@ Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f) {
 
         p1 = cos(P);
         p2 = r * sin(P);
-        p3 = c == l.Vp ? 0 : sin(P) / r;
+        p3 = sin(P) / r;
 
         q1 = cos(Q);
         q2 = s * sin(Q);
