@@ -18,6 +18,8 @@ public:
     double Vp, Vs, Rho;
     vector<Layer> Layers;
 
+    Medium();
+
     explicit Medium(double vs);
 
     Medium(double vp, double vs, double rho);

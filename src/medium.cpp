@@ -7,6 +7,12 @@
 
 using std::sqrt; using std::pow;
 
+Medium::Medium() {
+    Vp = 0;
+    Vs = 0;
+    Rho = 0;
+}
+
 Medium::Medium(double vs) {
     Vp = vs * sqrt(3);          // calculate Vp from Vs assuming λ = μ
     Vs = vs;
