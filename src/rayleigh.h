@@ -22,4 +22,6 @@ double RayleighDispersionFunction(const Medium &m, double c, double f);
 
 array<double, 500> RayleighFundamentalMode(const Medium &m);
 
+array<double, 500> RayleighNextHigherMode(const Medium &m, const array<double, 500> &prev);
+
 #endif //RDCS_RAYLEIGH_H
