@@ -22,8 +22,8 @@ Matrix<double, 6, 6> RayleighLayerMatrix(Layer l, double c, double f);
 
 double RayleighDispersionFunction(const Medium &m, double c, double f);
 
-array<double, 500> RayleighFundamentalMode(const Medium &m);
+array<double, 1500> RayleighFundamentalMode(const Medium &m);
 
-array<double, 500> RayleighNextHigherMode(const Medium &m, const array<double, 500> &prev);
+array<double, 1500> RayleighNextHigherMode(const Medium &m, const array<double, 1500> &prev);
 
 #endif //RDCS_RAYLEIGH_H

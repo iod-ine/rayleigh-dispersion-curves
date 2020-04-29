@@ -23,14 +23,14 @@ int main() {
     auto fourth = RayleighNextHigherMode(*M, third);
     auto fifth = RayleighNextHigherMode(*M, fourth);
 
-    spdlog::info("Writing the curves.csv outputfile...");
+    spdlog::info("Writing the curves.csv output file...");
 
     std::ofstream fout;
     fout.open("curves.csv");
 
     fout << "Fundamental,1st,2nd,3rd,4th,5th" << std::endl;
 
-    for (int i = 0; i < 500; ++i) {
+    for (int i = 0; i < 1500; ++i) {
         fout << fundamental[i] << ",";
         fout << first[i] << ",";
         fout << second[i] << ",";
